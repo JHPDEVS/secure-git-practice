@@ -1,0 +1,9 @@
+name: secrets example
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    env:
+      PASSWORD: ${{ secreats.SYSTEM_PASSWORD}} # secrtesの参照
+    steps:
+      - run: echo "${PASSWORD}"
